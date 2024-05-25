@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/mainPage.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/shop.css") }}">
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <table>
+            <tr class="tr-head">
+                <td style="margin-right:900px;" class="unwrap">
+                    <select class="chosen">
+                        <option>Все магазины</option>
+                        {% for shopS in shopSel %}
+                            <option class="shop-select" id="{{ shopS.id }}">{{ shopS.shopName }}</option>
+                        {% endfor %}
+                    </select>
+                    <button class="select-confirm">Перейти</button>
+                </td>
+                <td class="main-name-project" style="margin-left: 0; position: fixed; font-family: MainFont,serif; font-size: 65px; color: #173f33">Овощебаза</td>
+                <td class="login-info">Личный кабинет</td>
+            </tr>
+            <tr style="position: relative; display: flex; margin-top: 98px; margin-left: -22px">
+                <td>
+                    <div class="container-shop">
+                        <!-- переделать под твиg -->
+                        <div class="title-shop">
+                            <img class="title-img" src="{{ asset("imgs/image_2023-12-09_22-30-51.png") }}">
+                            <label class="title-name">{{ shop.shopName }}</label>
+                        </div>
+                        <form method="POST" class="goods-table">
+                            {% for good in goods %}
+                                <div class="single-good">
+                                    <img class="good-preview" src="{{ good.picture }}">
+                                    <label class="good-name" style="margin-right: 20px">{{ good.goodName }}</label>
+                                    <input class="good-input" name="num-of-goods-{{ good.id }}" placeholder="кол-во">
+                                    <label class="good-name" name="good-cost">{{ good.cost }}</label><label class="good-name">₽/кг</label>
+                                    <button class="add-to-basket" type="submit" name="add-to-basket-now-{{ good.id }}" id="{{ good.id }}">Добавить</button>
+                                </div>
+                            {% endfor %}
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="module" src="{{ asset("js/shop.js") }}"></script>
+{% endblock %}

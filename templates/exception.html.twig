@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% block head %}
+    <link rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="content" style=" justify-content: center; text-align: center; margin-top: 10%;">
+        <label style="font-family: 'Arial Black'; font-size: 60px; color: #21310e;">
+            Упс! Что-то пошло не так.
+            <br>Причина: {{ exception }}
+        </label>
+        <img style="max-height: 70px" src="{{ asset('imgs/image_2023-12-09_22-30-51.png') }}">
+    </div>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/account.css") }}">
+{% endblock %}
+{% block body %}
+        <table>
+            <tr class="tr-head" style="z-index: 100">
+                <td style="margin-right:900px;" class="unwrap">
+                    <select class="chosen">
+                        <option>Все магазины</option>
+                        {% for shop in shopSel %}
+                            <option class="shop-select" id="{{ shop.id }}">{{ shop.shopName }}</option>
+                        {% endfor %}
+                    </select>
+                    <button class="select-confirm">Перейти</button>
+                </td>
+                <td class="main-name-project" style="margin-left: 0; position: fixed; font-family: MainFont,serif; font-size: 65px; color: #173f33">Овощебаза</td>
+            </tr>
+            <tr style="position: relative; display: flex; margin-top: 98px; margin-left: -22px">
+                <td>
+                    <div class="container-shop">
+                        <!-- переделать под твиg -->
+                        <div class="personal-info">
+                            {{ user.surname }} {{ user.name }}
+                        </div>
+                    </div>
+                    <form method="POST" >
+                        <table class="login-inf">
+                            <tr>
+                                <td>
+                                    <label class="desc-input" >Логин: </label>
+                                    <input class="name-input" name="current-login" style="margin-bottom: 20px" value="{{ user.login }}">
+                                    <input class="submitLog" style="margin-bottom: 20px" value="Изменить" type="submit" name="submitLogin"/>
+                                </td>
+                            </tr>
+                            {% if user.hasAbilityForShop == true %}
+                                <tr style="margin-top: 30px">
+                                    <td style="max-width: 750px; padding: 20px; border-radius: 20px;background-color: rgba(27,148,72,0.31); ">
+                                        <div class="shop-info">
+                                            <label class="desc-input">Магазин: </label>
+                                            {% if shopName is defined %}
+                                                <input class="name-input" name="shop-name-inp" value="{{ shopName }}">
+                                            {% else %}
+                                                <input class="name-input" name="shop-name-inp" value="" placeholder="назовите магазин">
+                                            {% endif %}
+
+                                            <input class="submitLog" value="Изменить" type="submit" name="submitShopName"/>
+                                        </div>
+                                        <div class="shop-info">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <label class="desc-input">Добавить товар? </label>
+                                                        <input class="name-input" style="margin-top: 10px" name="good-name" placeholder="название">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input class="name-input" style="margin-top: 10px; margin-left: 260px" name="good-cost" placeholder="стоимость">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input class="name-input" style="margin-top: 10px; margin-left: 260px" name="good-pic" placeholder="ссылка на картинку">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input class="submitLog" style="margin-top: 10px; margin-left: 260px" value="Добавить" type="submit" name="submitNewGood"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr style="margin-top: 30px">
+                                    <td>
+                                        <label class="desc-input" >Ваша корзина:</label>
+                                    </td>
+                                </tr>
+                                {% if goodsInBasket is defined %}
+                                    <form method="post">
+                                        {% for good in goodsInBasket %}
+                                            {% if good is defined %}
+                                                <tr>
+                                                    <td>
+                                                        <div class="single-good">
+                                                            <img class="good-preview" src="{{ good.goodId.picture }}">
+                                                            <label class="good-name" style="margin-right: 20px">{{ good.goodId.goodName }}</label>
+                                                            <input class="good-input" style="width: 100px; margin-right: 10px" name="num-of-goods-{{ good.id }}" placeholder="кол-во" value="{{ good.number }}">
+                                                            <label class="good-name" name="good-cost">{{ good.goodId.cost }}</label><label class="good-name">₽/кг</label>
+                                                            <button class="add-to-basket" type="submit" name="add-to-basket-now-{{ good.id }}" id="{{ good.id }}">Изменить</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            {%  endif %}
+                                        {% endfor %}
+                                        <tr>
+                                            <td>
+                                                <input class="submitLog" style="margin-top: 10px; margin-left: 260px" value="Заказать" type="submit" name="submitNewOrder"/>
+                                            </td>
+                                        </tr>
+                                    </form>
+                                {% endif %}
+                            {% endif %}
+                        </table>
+                    </form>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="module" src="{{ asset("js/account.js") }}"></script>
+{% endblock %}

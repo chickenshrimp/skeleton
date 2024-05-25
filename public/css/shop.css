@@ -1,0 +1,109 @@
+.title-shop{
+    margin-top: 40px;
+    margin-left: 500px;
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.title-img{
+    max-height: 80px;
+    margin-right: 10px;
+}
+
+.title-name{
+    font-family: 'OrdinaryFont';
+    font-size: 65px;
+    font-weight: 700;
+    color: #1b9448;
+    height: 120px;
+}
+
+.container-shop{
+    margin: auto;
+    flex-direction: row;
+}
+
+.personal-info{
+    font-family: 'OrdinaryFont';
+    font-size: 65px;
+    font-weight: 700;
+    color: white;
+    height: 170px;
+    background-color: #1b9448;
+    border-radius: 13px;
+}
+
+.goods-table{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.single-good{
+    margin-left: 500px;
+    margin-top: 20px;
+    width: 600px;
+    height: 100px;
+    background-color: rgba(175,219,114,1);
+    border-radius: 13px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: flex
+}
+
+.good-preview{
+    border-radius: 13px;
+    max-height: 70px;
+    margin-right: 50px;
+    float: left
+}
+
+.good-name{
+    font-family: OrdinaryFont;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.good-input{
+    border:none;
+    outline:none;
+    display:inline-block;
+    height:40px;
+    vertical-align:middle;
+    position:relative;
+    border-radius:22px;
+    width:120px;
+    box-sizing:border-box;
+    padding:0 18px;
+    font-family: OrdinaryFont;
+    font-size: 24px;
+    font-weight: 800;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.add-or-reduce{
+    width: 30px;
+    border-radius: 13px;
+    border-color: #739364;
+    color: #21310e;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.add-to-basket{
+    background-color: #4f805d;
+    font-family: OrdinaryFont;
+    font-size: 17px;
+    width: 100px;
+    height: 30px;
+    border-radius: 13px;
+    text-align: center;
+    color: rgb(246, 250, 241);
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 10px;
+}

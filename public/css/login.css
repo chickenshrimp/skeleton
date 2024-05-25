@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(241, 255, 232);
+}
+
+.container{
+    margin: auto;
+    display: flex;
+    width: 550px;
+    height: 600px;
+    background-color: #4f805d;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+label{
+    font-family: MainFont,serif;
+    font-size: 65px;
+    color: #173f33;
+    margin-bottom: 40px;
+}
+
+.name-input{
+    font-family: OrdinaryFont, serif;
+    font-size: 20px;
+    color: #fff;
+}
+
+.input-desc{
+    position: relative;
+    left: -15%;
+}
+
+.registration{
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.registration:hover{
+    color: #3adb76;
+}
+
+input{
+    border:none;
+    outline:none;
+    display:inline-block;
+    height:40px;
+    vertical-align:middle;
+    position:relative;
+    bottom:14px;
+    border-radius:22px;
+    width:320px;
+    box-sizing:border-box;
+    padding:0 18px;
+    font-family: OrdinaryFont;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.info-input{
+    left: -15%;
+}
+
+.submitLog{
+    background: rgba(13, 63, 14, 0.33);
+    color: #fff;
+    top: 25px;
+    width:100px;
+    font-family: 'OrdinaryFont';
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: 'MainFont';
+    src: url('../fonts/DischargePro.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OrdinaryFont';
+    src: url('../fonts/cuyabra-Regular [RUS by Zephyrus].ttf') format('truetype')
+}

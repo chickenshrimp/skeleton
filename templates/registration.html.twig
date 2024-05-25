@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/registration.css") }}">
+{% endblock %}
+{% block body %}
+    <div style="margin-top: 50px">
+        <form class="container" method="post">
+            <label class="title-name">Овощебаза</label>
+            <label class="name-input input-desc">Введите своё имя</label>
+            <input name="name" class="info-input" id="name">
+            <label class="name-input input-desc">Введите свою фамилию</label>
+            <input name="surname" class="info-input" id="surname">
+            <label class="name-input input-desc">Введите свой логин</label>
+            <input name="login" class="info-input" id="login">
+            <label class="name-input input-desc">Введите свой пароль</label>
+            <input name="password" class="info-input" id="password">
+            <input class="submitReg" value="Зарегистрироваться" type="submit" name="submit" />
+        </form>
+    </div>
+    <script type="module" src="{{ asset("js/registration.js") }}"></script>
+{% endblock %}

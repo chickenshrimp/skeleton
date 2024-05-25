@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(241, 255, 232);
+}
+
+.container{
+    margin: 0;
+    padding: 0;
+}
+
+.tr-head{
+    padding: -2px;
+    margin: -2px;
+    min-width: 100%;
+    min-height: 100px;
+    background-color: #1b9448;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.smth-stand{
+    min-height: 100%;
+    width: 158px;
+    background-color: rgba(132, 222, 154, 0.66);
+    z-index: 0;
+}
+
+.name-input{
+    font-family: OrdinaryFont, serif;
+    font-size: 20px;
+    color: #fff;
+}
+
+.input-search:hover{
+    box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
+}
+
+.search {
+    position: relative;
+}
+
+.input-search {
+    background-color: transparent;
+    border: 2px solid #fff;
+    height: 30px;
+    width: 30px;
+    padding: 0 0px;
+    font-size: 1.1em;
+    font-weight: lighter;
+    color: #fff;
+    border-radius: 24px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.input-search:focus {
+    width: 200px;
+    padding: 0 12px;
+    outline:none;
+}
+
+.input-search+.search:after {
+    content: '';
+    border-top: 3px solid #fff;
+    width: 15px;
+    display: block;
+    position: absolute;
+    right: -6px;
+    bottom: -8px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.input-search+.search:before {
+    content: '';
+    border-top: 3px solid #fff;
+    width: 0px;
+    display: block;
+    position: absolute;
+    right: -2px;
+    bottom: 19px;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-delay: 0s; /* Safari */
+    transition-delay: 0s;
+}
+
+.input-search:focus+.search:after {
+    content: '';
+    border-top: 3px solid #fff;
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.input-search:focus+.search:before {
+    right: 10px;
+    bottom: 9px;
+    width: 15px;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    -webkit-transition-delay: 0.2s; /* Safari */
+    transition-delay: 0.2s;
+}
+
+.title-shop{
+    margin-top: 40px;
+    margin-left: 500px;
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+}
+
+.title-img{
+    max-height: 80px;
+    margin-right: 10px;
+}
+
+.title-name{
+    font-family: 'OrdinaryFont';
+    font-size: 65px;
+    font-weight: 700;
+    color: #1b9448;
+    height: 120px;
+}
+
+.container-shop{
+    margin-left: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.personal-info{
+    text-align: center;
+    font-family: 'OrdinaryFont';
+    font-size: 65px;
+    font-weight: 700;
+    color: white;
+    height: 100px;
+    background-color: #1b9448;
+    border-radius: 13px;
+    padding: 20px;
+}
+
+.goods-table{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.single-good{
+    margin-top: 70px;
+    width: 600px;
+    height: 100px;
+    background-color: rgba(175,219,114,1);
+    border-radius: 13px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: flex
+}
+
+.good-preview{
+    border-radius: 13px;
+    max-height: 50px;
+    margin-right: 100px;
+    float: left
+}
+
+.chosen{
+    width: 200px;
+    height: 40px;
+    border-radius: 13px;
+    border-color: #4f805d;
+    font-family: OrdinaryFont;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 900;
+    background-color: rgba(150,217,128,1);
+}
+
+.select-confirm{
+    height: 40px;
+    border-radius: 13px;
+    border-color: #4f805d;
+    font-family: OrdinaryFont;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 900;
+    padding: 7px;
+    background-color: rgb(223, 255, 212);
+}
+
+.good-name{
+    font-family: OrdinaryFont;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.add-or-reduce{
+    min-width: 30px;
+    border-radius: 13px;
+
+    color: #21310e;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.add-to-basket{
+    background-color: #4f805d;
+    font-family: OrdinaryFont;
+    font-size: 17px;
+    width: 100px;
+    height: 30px;
+    border-radius: 13px;
+    text-align: center;
+    color: rgb(246, 250, 241);
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.name-input{
+    font-family: OrdinaryFont, serif;
+    font-size: 20px;
+    color: #223b16;
+    font-weight: 700;
+    text-align: center;
+}
+
+.desc-input{
+    font-family: OrdinaryFont, serif;
+    font-size: 30px;
+    color: #223b16;
+    font-weight: 700;
+}
+
+input{
+    border:none;
+    outline:none;
+    display:inline-block;
+    height:40px;
+    vertical-align:middle;
+    position:relative;
+    border-radius:22px;
+    width:320px;
+    box-sizing:border-box;
+    padding:0 18px;
+    font-family: OrdinaryFont;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.submitLog{
+    background: rgba(13, 63, 14, 0.33);
+    color: #fff;
+    width:130px;
+    font-family: 'OrdinaryFont';
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login-inf{
+    margin-left: 500px;
+}
+
+@font-face {
+    font-family: 'MainFont';
+    src: url('../fonts/DischargePro.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OrdinaryFont';
+    src: url('../fonts/cuyabra-Regular [RUS by Zephyrus].ttf') format('truetype')
+}

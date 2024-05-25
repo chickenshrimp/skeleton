@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/login.css") }}">
+{% endblock %}
+{% block body %}
+    <div style="margin-top: 50px">
+        <form class="container" method="POST" action="/login" target="_self">
+            <label class="title-name">Овощебаза</label>
+            <label class="name-input input-desc">Введите свой логин</label>
+            <input name="login" class="info-input" id="login">
+            <label class="name-input input-desc">Введите свой пароль</label>
+            <input name="password" class="info-input" type="password" id="password">
+            <label class="name-input registration" id="registry">Ещё не зарегистрированы?</label>
+            <input class="submitLog" value="Войти" type="submit" name="submit"/>
+
+        </form>
+    </div>
+    <script type="module" src="{{ asset("js/login.js") }}"></script>
+{% endblock %}
