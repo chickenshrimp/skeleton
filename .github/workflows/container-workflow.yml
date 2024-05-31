@@ -6,6 +6,7 @@ on:
 
 jobs:
   deployment:
+    name: Containerisation
     runs-on: ubuntu-latest
     container:
       image: composer:latest
