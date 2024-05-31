@@ -17,6 +17,8 @@ jobs:
       uses: actions/checkout@v2
     - name: Running composer install
       run: composer install
+    - name: Going into project directory
+      run: cd skeleton/
     - name: Running server
       run: symfony server:start
 
