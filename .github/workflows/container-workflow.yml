@@ -18,7 +18,7 @@ jobs:
     - name: Running composer install
       run: composer install
     - name: Going into project directory
-      run: cd skeleton/
+      run: cd skeleton
     - name: Running server
       run: symfony server:start
 
