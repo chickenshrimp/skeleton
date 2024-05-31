@@ -1,0 +1,25 @@
+name: Containerisation
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    container:
+      image: composer:latest
+      volumes:
+        - ${{ github.workspace }}:/app
+    steps: 
+    - name: Check out the repository
+      uses: actions/checkout@v2
+    - name: Running composer install
+      run: composer install
+    - name: Running phpunit
+      run: ./vendor/bin/phpunit tests
+    - name: Running server
+      run: symfony server:start
+
+     
+
