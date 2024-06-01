@@ -54,10 +54,10 @@ jobs:
       run: echo "${{ secrets.DOCKER_KEY }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Tag Docker image
-      run: docker tag my-symfony-app:latest ${{ secrets.DOCKER_USERNAME }}/my-symfony-app:latest
+      run: docker tag skeleton-vegetables:latest ${{ secrets.DOCKER_USERNAME }}/skeleton-vegetables:latest
 
     - name: Push Docker image
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/my-symfony-app:latest
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/skeleton-vegetables:latest
       
     - name: Run Docker container
       run: docker run -d -p 80:80 --name skeleton-vegetables skeleton-vegetables
