@@ -18,15 +18,13 @@ jobs:
     - name: Running composer install
       run: composer install
       
-    - name: Build Docker image
-      run: docker build -t skeleton-vegetables
-
-    - name: Log in to Docker Hub
-      run: echo ${{ secrets.DOCKER_KEY }} | docker login -u chickenshrimp --password-stdin
-
-    - name: Create Docker Tag
-      run: docker tag skeleton-vegetables chickenshrimp/skeleton-vegetables
-      
-    - name: Push to Docker Hub
-      run: docker push chickenshrimp/skeleton-vegetables
-
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      uses: docker/build-push-action@v3
+      with:
+        file: Dockerfile
+        push: false
+        tags: user/app:latest
