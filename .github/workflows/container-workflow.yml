@@ -17,21 +17,16 @@ jobs:
       uses: actions/checkout@v2
     - name: Running composer install
       run: composer install
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
+      
+    - name: Build Docker image
+      run: docker build -t skeleton-vegetables
 
-    - name: Login to Docker Hub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Log in to Docker Hub
+      run: echo ${{ secrets.DOCKER_KEY }} | docker login -u chickenshrimp --password-stdin
 
-    - name: Pull Docker image with Symfony environment
-      run: docker pull ghcr.io/symfonycasts/php:7.4-fpm
-
-    - name: Build and push Docker image
-      run: |
-        docker tag ghcr.io/symfonycasts/php:7.4-fpm ${{ secrets.DOCKER_USERNAME }}/yourimage:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/yourimage:latest
-     
+    - name: Create Docker Tag
+      run: docker tag skeleton-vegetables chickenshrimp/skeleton-vegetables
+      
+    - name: Push to Docker Hub
+      run: docker push chickenshrimp/skeleton-vegetables
 
