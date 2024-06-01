@@ -42,7 +42,7 @@ jobs:
       run: composer install --prefer-dist --no-progress --no-suggest
 
     - name: Copy .env file
-      run: cp .env.test .env
+      run: cp .env .env1
 
     - name: Run database migrations
       run: php bin/console doctrine:migrations:migrate --no-interaction
