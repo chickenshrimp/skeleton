@@ -48,7 +48,7 @@ jobs:
       run: php bin/console doctrine:migrations:migrate --no-interaction
 
     - name: Build Docker image
-      run: docker build -t my-symfony-app .
+      run: docker build -t skeleton-vegetables.
 
     - name: Run Docker container
-      run: docker run -d -p 80:80 --name my-symfony-app my-symfony-app
+      run: docker run -d -p 80:80 --name skeleton-vegetables skeleton-vegetables
