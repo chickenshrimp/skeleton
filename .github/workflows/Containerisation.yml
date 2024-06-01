@@ -16,6 +16,10 @@ jobs:
     services:
       postgres:
         image: postgres:14
+        env:
+          POSTGRES_DB: vegetables-market
+          POSTGRES_USER: ${{ secrets.DB_USERNAME }}
+          POSTGRES_PASSWORD: ${{ secrets.DB_PASSWORD }}
         ports:
           - 5432:5432
         options: >-
