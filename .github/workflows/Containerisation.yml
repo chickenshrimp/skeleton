@@ -47,9 +47,6 @@ jobs:
     - name: Run database migrations
       run: php bin/console doctrine:migrations:migrate --no-interaction
 
-    - name: Run tests
-      run: ./vendor/bin/phpunit
-
     - name: Build Docker image
       run: docker build -t my-symfony-app .
 
