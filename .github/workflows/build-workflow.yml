@@ -1,4 +1,4 @@
-name: Containerisation
+name: Building
 on: 
   push:
     branches:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   deployment:
-    name: Containerisation
+    name: Building
     runs-on: ubuntu-latest
     container:
       image: composer:latest
