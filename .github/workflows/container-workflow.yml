@@ -2,7 +2,7 @@ name: Containerisation
 on: 
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deployment:
@@ -17,10 +17,16 @@ jobs:
       uses: actions/checkout@v2
     - name: Running composer install
       run: composer install
-    - name: Running phpunit
-      run: ./vendor/bin/phpunit tests
-    - name: Running server
-      run: symfony server:start
+      
+    - name: Build Docker image
+      run: docker build -t skeleton-vegetables
 
-     
+    - name: Log in to Docker Hub
+      run: echo ${{ secrets.DOCKER_KEY }} | docker login -u chickenshrimp --password-stdin
+
+    - name: Create Docker Tag
+      run: docker tag skeleton-vegetables chickenshrimp/skeleton-vegetables
+      
+    - name: Push to Docker Hub
+      run: docker push chickenshrimp/skeleton-vegetables
 
